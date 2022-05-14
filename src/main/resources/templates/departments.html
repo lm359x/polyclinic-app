@@ -33,7 +33,7 @@
             <h5 class="card-title" th:text="${department.getDepartmentName()}">Отделение</h5>
             <div class="d-flex flex-row justify-content-between">
                 <p class="card-text" th:text="${department.getServices()}">Популярные услуги.</p>
-                <p class="card-text">От 2000р.</p>
+                <p th:with="ind=${deps.indexOf(department)}" class="card-text" >От <span th:text="${(ind%3+1)*1000+(ind%2)*500}"></span> &#8381;.</p>
             </div>
 
             <a th:href="@{/departments/{id}/create_appointment(id=${department.getId()})}" class="btn btn-primary">Записаться</a>
