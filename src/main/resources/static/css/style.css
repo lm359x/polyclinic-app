@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(#33fdcc, white);
+
+}
+html, body {
+    min-height: 100%;
+}
+h5.card-title{
+    background: linear-gradient(#33fdcc, white);
+    color:black;
+}
+
+
