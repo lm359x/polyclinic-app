@@ -33,6 +33,13 @@
         <input class="form-control" type="text" th:value="${department.getDepartmentName()}"
                aria-label="Disabled input example" disabled readonly id="department_name">
         <row>
+            <label for="service_name">Выберите услугу</label>
+            <select class="form-control" id="service_name" th:field="*{serviceName}">
+                <option th:each="service:${department.getServices()}" th:text="${service}" th:value="${service}" ></option>
+
+            </select>
+        </row>
+        <row>
             <div style="color:red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date error</div>
             <label for="date">Введите дату:</label>
             <input type="date" class="form-control" id="date" th:field="*{date}">

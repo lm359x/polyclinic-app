@@ -25,13 +25,17 @@
     </nav>
 
 </header>
-<div class="d-grid gap-5">
+<div class="d-grid gap-5 mt-2" >
 
     <div th:each="department : ${deps}" class="card container row-sm">
         <!--<img src="https://leaderid.s3.amazonaws.com/event_photo/178171/60093b3b7e9bb434619063.jpg" class="card-img-top" style="max-height: 100px" alt="...">-->
         <div class="card-body">
             <h5 class="card-title" th:text="${department.getDepartmentName()}">Отделение</h5>
-            <p class="card-text" th:text="${department.getServices()}">Популярные услуги.</p>
+            <div class="d-flex flex-row justify-content-between">
+                <p class="card-text" th:text="${department.getServices()}">Популярные услуги.</p>
+                <p class="card-text">От 2000р.</p>
+            </div>
+
             <a th:href="@{/departments/{id}/create_appointment(id=${department.getId()})}" class="btn btn-primary">Записаться</a>
         </div>
     </div>

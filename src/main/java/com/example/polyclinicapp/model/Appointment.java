@@ -28,11 +28,15 @@ public class Appointment {
     @Column(name = "department_name")
     private String departmentName;
 
+    @Column(name="service_name")
+    private String serviceName;
+
     @Column(name = "date_of_appointment")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull(message = "Дата не должна быть пустой.")
     @Future(message = "Дата не должна быть в прошлом")
     private Date date;
+
 
     @DateTimeFormat(pattern = "hh:mm")
     private String time;
@@ -42,7 +46,7 @@ public class Appointment {
         return formatter.format(date);
     }
 
-    ;
+
 
     public Date getDate() {
         return date;

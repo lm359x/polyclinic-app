@@ -42,6 +42,7 @@
         <!--<img src="https://leaderid.s3.amazonaws.com/event_photo/178171/60093b3b7e9bb434619063.jpg" class="card-img-top" style="max-height: 100px" alt="...">-->
         <div class="card-body">
             <h5 class="card-title" th:text="${appointment.getDepartmentName}">Отделение</h5>
+            <h6 class="card-title" th:text="${appointment.getServiceName()}">Отделение</h6>
             <h6 class="card-text" th:text="${appointment.getFormattedDate()}">дата приёма</h6>
             <p class="card-text" th:text="${appointment.getTime()}">время приёма</p>
             <a class="card-text" th:href="@{/profile/{id}(id=${appointments.indexOf(appointment)})}">Отменить</a>
