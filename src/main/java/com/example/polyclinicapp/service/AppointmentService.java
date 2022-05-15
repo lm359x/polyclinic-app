@@ -20,7 +20,8 @@ public class AppointmentService {
     private final UserRepository userRepository;
 
 
-    public AppointmentService(AppointmentRepository appointmentRepository, UserRepository userRepository) {
+    public AppointmentService(AppointmentRepository appointmentRepository,
+                              UserRepository userRepository) {
         this.appointmentRepository = appointmentRepository;
         this.userRepository = userRepository;
     }
@@ -28,8 +29,7 @@ public class AppointmentService {
     public Appointment addToUser(Appointment appointment){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.getUserByUsername(auth.getName());
-        if(user==null)
-            return null;
+        if(user==null) return null;
         appointment.setUser(user);
         appointment = appointmentRepository.save(appointment);
         return appointment;

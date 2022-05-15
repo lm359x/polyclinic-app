@@ -28,7 +28,7 @@ public class Appointment {
     @Column(name = "department_name")
     private String departmentName;
 
-    @Column(name="service_name")
+    @Column(name = "service_name")
     private String serviceName;
 
     @Column(name = "date_of_appointment")
@@ -45,8 +45,6 @@ public class Appointment {
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         return formatter.format(date);
     }
-
-
 
     public Date getDate() {
         return date;
